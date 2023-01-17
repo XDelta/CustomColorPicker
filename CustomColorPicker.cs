@@ -21,7 +21,7 @@ namespace AvatarCreator {
         public override void OnEngineInit() {
             Config = GetConfiguration();
             Config.Save(true);
-            Harmony harmony = new Harmony("tk.deltawolf.CustomColorPicker");
+            Harmony harmony = new Harmony("net.deltawolf.CustomColorPicker");
             ColorPickerObject = SpecialItemsLib.SpecialItemsLib.RegisterItem(COLOR_PICKER_TAG);
             harmony.PatchAll();
         }
