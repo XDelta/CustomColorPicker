@@ -55,7 +55,9 @@
       <HintPath>R:\SteamLibrary\steamapps\common\NeosVRBetaBuilds\2021.10.30.605\nml_mods\SpecialItemsLib.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomColorPicker.cs" />

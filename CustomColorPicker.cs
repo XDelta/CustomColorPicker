@@ -6,11 +6,11 @@ using HarmonyLib;
 using NeosModLoader;
 using SpecialItemsLib;
 
-namespace AvatarCreator {
-	public class AvatarCreator : NeosMod {
+namespace CustomColorPicker {
+	public class CustomColorPicker : NeosMod {
 		public override string Name => "CustomColorPicker";
 		public override string Author => "Delta";
-		public override string Version => "1.0.0";
+		public override string Version => "1.1.0";
 		public override string Link => "https://github.com/XDelta/CustomColorPicker/";
 
 		private static ModConfiguration Config;
