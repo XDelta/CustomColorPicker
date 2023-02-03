@@ -49,16 +49,16 @@ namespace AvatarCreator {
                     await slot.LoadObjectAsync(ColorPickerObject.Uri);
                     InventoryItem component = slot.GetComponent<InventoryItem>();
                     slot = ((component != null) ? component.Unpack() : null) ?? slot;
+                    __instance.Enabled = false;
                     slot.LocalScale = float3.One * 0.5f;
 
-                    NeosColorDialog colorDialog = slot.GetComponentInChildren<NeosColorDialog>();
+                    NeosColorDialog colorDialog = slot.GetComponentInChildren<NeosColorDialog>(excludeDisabled:true);
+
                     colorDialog.TargetField.Value = __instance.TargetField.Value;
-
-                    var originalColor = (AccessTools.Field(typeof(NeosColorDialog), "_originalColor").GetValue(colorDialog) as Sync<color>);
-                    originalColor.Value = defaultColor;
-
+                    var colorDialogOriginalColor = (AccessTools.Field(typeof(NeosColorDialog), "_originalColor").GetValue(colorDialog) as Sync<color>);
+                    colorDialogOriginalColor.Value = defaultColor;
+                    __instance.Destroy();
                     slot.PositionInFrontOfUser(float3.Backward);
-
                 });
                 return false;
             }
